@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AkinoHouse - 游戏与音乐创作</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+
+    <header class="main-header">
+        <nav class="main-nav">
+            <ul class="nav-links">
+                <li><a href="#home" class="active">主页</a></li>
+                <li><a href="#games">Akino游戏</a></li>
+                <li><a href="#music">Akino音乐</a></li>
+                <li><a href="#yura">Yura音乐分享</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <section id="home" class="content-section home-section">
+            <h1 class="main-title">AkinoHouse</h1>
+            <p class="home-intro">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AkinoHouse诞生于2025年8月27日。
+                这里承载了Akino的许多创作，包括游戏和音乐；同时也有Akino的激推歌手 *葉月ゆら* 的歌曲分享。或许自此，这个网站也能用作博客了也说不定...？<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;对于游戏，最希望做好的是音游。Wormy
+                Chompers做了很久，之前用AI写了绝大部分代码，弄成了个小游戏。那之后又感觉这音游确实有些意思，于是自己学了点SDL，做出来了自己的游戏（虽然AI的辅助还是少不了……）。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;当然，音乐创作也是个有趣的事情！受葉月さん影响，曲风全成了哥特+奇幻风www
+                在这里也向大家激推她的歌！当然，纯音乐也是很不错的（快点去“Yura音乐分享”那里听 o((>ω< ))o ）<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;最后感谢大家对笨蛋Akino的支持！
+
+            </p>
+        </section>
+
+        <section id="games" class="content-section games-section">
+            <h2 class="section-title" id="AkinoGame">- AkinoGame -</h2>
+            <h2 class="section-title">Wormy Chompers (version 1.0)</h2>
+            <a href="assets/downloads/Wormy_Chompers_ver1.0.zip" class="download-link" download>下载 Wormy Chompers (version 1.0)</a>
+            <div class="games-grid">
+                <div class="game-item">
+                    <img src="assets/images/game1.png" alt="Main Menu" class="game-thumbnail">
+                    <h3>Main Menu</h3>
+                </div>
+                <div class="game-item">
+                    <img src="assets/images/game2.png" alt="Level Select Screen" class="game-thumbnail">
+                    <h3>Level Select Screen</h3>
+                </div>
+                <div class="game-item">
+                    <img src="assets/images/game3.png" alt="Game Screen" class="game-thumbnail">
+                    <h3>Game Screen</h3>
+                </div>
+                <div class="game-item">
+                    <img src="assets/images/game4.png" alt="Achievements Screen" class="game-thumbnail">
+                    <h3>Achievements Screen</h3>
+                </div>
+            </div>
+        </section>
+
+        <section id="music" class="content-section music-section">
+            <h2 class="section-title" id="Akino-Music">Music by Akino<p style="font-size: 1ex; color:black;">( MYASSK )
+                </p>
+            </h2>
+            <div class="music-grid">
+                <div class="music-item">
+                    <img src="assets/images/music1.png" alt="音乐作品1" class="music-thumbnail">
+                    <h3>ラビリンス</h3>
+                    <div class="music-controls">
+                        <button class="play-button" data-audio-src="assets/audio/music1.wav">播放 / 暂停</button>
+                        <audio id="music1-audio" src="assets/audio/music1.wav" preload="auto"></audio>
+                    </div>
+                </div>
+                <div class="music-item">
+                    <img src="assets/images/music2.png" alt="音乐作品2" class="music-thumbnail">
+                    <h3>さつ意</h3>
+                    <div class="music-controls">
+                        <button class="play-button" data-audio-src="assets/audio/music2.wav">播放 / 暂停</button>
+                        <audio id="music2-audio" src="assets/audio/music2.wav" preload="auto"></audio>
+                    </div>
+                </div>
+                <div class="music-item">
+                    <img src="assets/images/music3.png" alt="音乐作品3" class="music-thumbnail">
+                    <h3>ユートピア</h3>
+                    <div class="music-controls">
+                        <button class="play-button" data-audio-src="assets/audio/music3.wav">播放 / 暂停</button>
+                        <audio id="music3-audio" src="assets/audio/music3.wav" preload="auto"></audio>
+                    </div>
+                </div>
+                <div class="music-item">
+                    <img src="assets/images/music4.png" alt="音乐作品4" class="music-thumbnail">
+                    <h3>朦々煙る御伽で</h3>
+                    <div class="music-controls">
+                        <button class="play-button" data-audio-src="assets/audio/music4.wav">播放 / 暂停</button>
+                        <audio id="music4-audio" src="assets/audio/music4.wav" preload="auto"></audio>
+                    </div>
+                </div>
+                <div class="music-item">
+                    <img src="assets/images/music5.png" alt="音乐作品5" class="music-thumbnail">
+                    <h3>Après le Rêve Illusoire</h3>
+                    <div class="music-controls">
+                        <button class="play-button" data-audio-src="assets/audio/music5.wav">播放 / 暂停</button>
+                        <audio id="music5-audio" src="assets/audio/music5.wav" preload="auto"></audio>
+                    </div>
+                </div>
+                <div class="music-item">
+                    <img src="assets/images/music6.png" alt="音乐作品6" class="music-thumbnail">
+                    <h3>クリスタル</h3>
+                    <div class="music-controls">
+                        <button class="play-button" data-audio-src="assets/audio/music6.wav">播放 / 暂停</button>
+                        <audio id="music6-audio" src="assets/audio/music6.wav" preload="auto"></audio>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="yura" class="content-section yura-section">
+            <h2 id="Yura-Hatsuki">Yura Hatsuki's Music Recommendations</h2>
+            <div class="yura-intro">
+                <a href="https://zh.wikipedia.org/wiki/%E8%91%89%E6%9C%88%E7%94%B1%E7%BE%85" target="_blank"
+                    style="font-family: 'YuraFont', sans-serif; font-style: italic; font-size: 4ex; color:rgb(35, 99, 132)"><strong>了解
+                        葉月ゆら</strong></a>
+            </div>
+
+            <div class="music-recommendations">
+                <div class="song-item">
+                    <img src="assets/images/yura1.png" alt="歌曲封面1" class="song-cover">
+                    <div class="song-details">
+                        <h3 class="song-title">サラマンドラの踊り子</h3>
+                        <p class="song-artist">作詞：葉月ゆら　作編曲：Drop</p>
+                        <div class="my-comment">
+                            <p>入坑油蜡的起点。初中时第一次听，如今依旧是神曲。</p>
+                        </div>
+                        <div class="player-container">
+                            <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86
+                                src="//music.163.com/outchain/player?type=2&id=28178158&auto=1&height=66"></iframe>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="song-item">
+                    <img src="assets/images/yura2.png" alt="歌曲封面2" class="song-cover">
+                    <div class="song-details">
+                        <h3 class="song-title">悪役令嬢の顛末</h3>
+                        <p class="song-artist">作詞・作編曲：あ子　MIX：Drop</p>
+                        <div class="my-comment">
+                            <p>经典反派大小姐……高三写的一篇感慨文借用了这个标题（）这首歌在我心里，排top15之列是没问题的O(∩_∩)O</p>
+                        </div>
+                        <div class="player-container">
+                            <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86
+                                src="//music.163.com/outchain/player?type=2&id=2132485949&auto=1&height=66"></iframe>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="song-item">
+                    <img src="assets/images/yura3.png" alt="歌曲封面2" class="song-cover">
+                    <div class="song-details">
+                        <h3 class="song-title">琥珀と忘却の旅人</h3>
+                        <p class="song-artist">作詞：葉月ゆら　作編曲：Drop</p>
+                        <div class="my-comment">
+                            <p>必须排名top5之列的一首。当时无比喜欢这首歌，还幸运地在网上找到了钢琴谱（感谢大佬扒谱）！练习了很多遍……于是这首成为了我唯一一首会弹的叶月的歌www</p>
+                        </div>
+                        <div class="player-container">
+                            <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86
+                            src="//music.163.com/outchain/player?type=2&id=1947466853&auto=1&height=66"></iframe>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="social-links">
+            <a href="https://space.bilibili.com/484500948?spm_id_from=333.1007.0.0" target="_blank"
+                aria-label="Bilibili">
+                <i class="fab fa-bilibili"></i>
+            </a>
+            <a href="https://github.com/MYASSK" target="_blank" aria-label="GitHub">
+                <i class="fab fa-github"></i>
+            </a>
+        </div>
+        <p>2025 AkinoHouse&nbsp;&nbsp;&nbsp;&nbsp;E-mail : 2184790690@qq.com</p>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
+</body>
+
+</html>

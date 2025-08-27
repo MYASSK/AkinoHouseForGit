@@ -1,0 +1,550 @@
+@font-face {
+    font-family: 'IntroFont'; /* 👈 给你的字体起一个名字 */
+    src: url('../ttf/intro.ttf') format('truetype'); /* 👈 这里的路径是关键 */
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'TitleFont';
+    src: url('../ttf/title.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'YuraFont';
+    src: url('../ttf/mincho.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'YuraHatsukiFont';
+    src: url('../ttf/yura.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'akinomusicFont';
+    src: url('../ttf/akinomusic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'akinogameFont';
+    src: url('../ttf/game.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+/* 通用样式和基础配置 */
+:root {
+    --primary-gray: #333333; /* 主色调：深灰色 */
+    --secondary-gray: #555555; /* 辅助色：中灰色 */
+    --light-gray: #f0f0f0;    /* 背景色：浅灰色 */
+    --accent-green: #4CAF50;  /* 强调色：绿色 */
+    --text-light: #ffffff;    /* 亮色文字 */
+    --text-dark: #333333;     /* 暗色文字 */
+
+    --spacing-sm: 10px;
+    --spacing-md: 20px;
+    --spacing-lg: 40px;
+    --border-radius: 8px;
+    --box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+* {
+    box-sizing: border-box; /* 盒子模型基础 */
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background-color: var(--light-gray);
+    color: var(--text-dark);
+    scroll-behavior: smooth; /* 平滑滚动 */
+}
+
+/* 头部导航栏 */
+.main-header {
+    background-color: var(--primary-gray);
+    padding: var(--spacing-md) 0;
+    position: sticky; /* 粘性定位，滚动时固定 */
+    top: 0;
+    z-index: 1000;
+    box-shadow: var(--box-shadow);
+}
+
+.main-nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center; /* 导航链接居中 */
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: var(--spacing-lg); /* 链接之间的间距 */
+}
+
+.nav-links li a {
+    color: var(--text-light);
+    text-decoration: none;
+    font-size: 1.1em;
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: var(--border-radius);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav-links li a:hover,
+.nav-links li a.active {
+    background-color: var(--accent-green);
+    color: var(--text-light);
+}
+
+/* 主要内容区域 */
+.main-content {
+    flex-grow: 1; /* 让 main-content 填充可用空间 */
+    /* 背景图设置 */
+    background-image: url('../background/background.png'); 
+    background-size: cover; /* 覆盖整个区域，可能裁剪图片 */
+    background-position: center center; /* 图片居中显示 */
+    background-repeat: no-repeat; 
+    background-attachment: fixed;
+
+    padding: 20px; /* 根据需要调整内边距 */
+}
+
+.content-section {
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: var(--spacing-lg);
+    margin-bottom: var(--spacing-lg);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    display: none; /* 默认隐藏所有内容区 */
+}
+
+.content-section.active {
+    display: block; /* 只有激活的区域才显示 */
+}
+
+.section-title {
+    color: var(--primary-gray);
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+    font-size: 2em;
+}
+
+/* 主页样式 */
+.home-section {
+    display: none; /* 保持默认隐藏 */
+    justify-content: center;
+    align-items: center;
+    box-shadow: none;
+}
+
+.home-section.active {
+    display: flex; /* 只有激活时才用 flex 布局 */
+    flex-direction: column;
+}
+
+.home-intro {
+    background-color: rgba(214, 240, 218, 0.189); 
+    padding: var(--spacing-md); /* 内部留白 */
+    border-radius: var(--border-radius); /* 圆角 */
+    box-shadow: var(--box-shadow); /* 阴影效果 */
+    margin-top: var(--spacing-md); /* 顶部留出与标题的间距 */
+    max-width: 800px; /* 限制宽度，让文字不至于太宽 */
+    text-align: left; /* 文字左对齐 */
+    line-height: 1.8; /* 行高，让文字更易读 */
+    font-weight: bolder;
+    font-family: 'IntroFont', sans-serif;
+    font-size: 1.3em; /* 调整字体大小，让它更易读 */
+}
+
+.main-title {
+    font-size: 9em;
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
+    letter-spacing: 5px;
+    text-align: center;
+    font-family: 'TitleFont', sans-serif;
+    background-image: linear-gradient(to right, #18a92e, #45cb23ae);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent; 
+}
+
+/* 游戏作品样式 */
+#AkinoGame {
+    font-size: 11ex;
+    font-family: 'akinogameFont', sans-serif;
+    text-align: center;
+    background-image: linear-gradient(to right, #ff8800,rgb(255, 200, 0), #ff0000);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-weight: bold; /* 确保文字足够粗，以便渐变效果更明显 */
+}
+.download-link {
+    display: inline-block;
+    background-color: var(--accent-green); /* 强调色背景 */
+    color: var(--text-light); /* 亮色文字 */
+    text-align: center;
+    padding: var(--spacing-sm);
+    border-radius: var(--border-radius);
+    text-decoration: none; /* 去掉下划线 */
+    margin-top: var(--spacing-sm);
+    margin-bottom: var(--spacing-md); 
+    width: 20em;
+    transition: background-color 0.3s ease;
+}
+
+.download-link:hover {
+    background-color: #165b39; /* 鼠标悬停时的颜色 */
+}
+.games-grid {
+    display: grid;
+    /* 强制一行两列 */
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-md);
+}
+
+.game-item {
+    background-color: var(--light-gray);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--box-shadow);
+    transition: transform 0.3s ease;
+}
+
+.game-item:hover {
+    transform: translateY(-5px);
+}
+
+.game-thumbnail {
+    width: 100%;
+    object-fit: cover; /* 裁剪图片以适应 */
+    display: block;
+}
+
+.game-item h3 {
+    color: var(--primary-gray);
+    padding: var(--spacing-sm);
+    text-align: center;
+    margin-top: var(--spacing-sm);
+}
+
+.game-item p {
+    color: var(--secondary-gray);
+    padding: 0 var(--spacing-sm) var(--spacing-md);
+    font-size: 0.9em;
+    text-align: center;
+}
+
+/* 音乐作品样式 */
+#Akino-Music {
+    font-size: 13ex;
+    font-family: 'akinomusicFont', sans-serif;
+    text-align: center;
+    background-image: linear-gradient(to right, #531515,rgba(42, 3, 3, 0.84), #000000);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-weight: bold; /* 确保文字足够粗，以便渐变效果更明显 */
+}
+.music-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+.music-thumbnail {
+    width: 250px; /* 音乐封面大小 */
+    height: 250px;
+    object-fit: cover;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.music-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    justify-items: center;
+}
+
+.play-button {
+    background-color: var(--accent-green);
+    color: var(--text-light);
+    border: none;
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+.play-button:hover {
+    background-color: darken(var(--accent-green), 10%); /* 需要Sass/Less或者手动计算 */
+    background-color: #388E3C; /* 深一点的绿色 */
+}
+
+/* "播放中"图标样式 */
+.playing-icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* 半透明黑色背景 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none; /* 允许点击穿透，以便按钮正常工作 */
+}
+
+.playing-icon img {
+    width: 50px;
+    height: 50px;
+    opacity: 0.8;
+    animation: pulse 1.5s infinite; /* 脉冲动画 */
+}
+
+/* 播放按钮和从头播放按钮的通用样式 */
+.play-button, .restart-button {
+    background-color: var(--accent-green);
+    color: var(--text-light);
+    border: none;
+    padding: 8px 16px;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+.play-button:hover, .restart-button:hover {
+    background-color: #388E3C;
+}
+
+/* 音乐作品容器相对定位，以便图标绝对定位 */
+.music-item {
+    position: relative;
+}
+/* 音乐控制按钮容器 */
+.music-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px; /* 按钮之间的间距 */
+    margin-top: 10px;
+}
+
+/* 播放按钮和从头播放按钮的通用样式 */
+.play-button, .restart-button {
+    background-color: var(--accent-green);
+    color: var(--text-light);
+    border: none;
+    padding: 8px 16px;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.play-button:hover, .restart-button:hover {
+    background-color: #11573f; /* 鼠标悬浮时的颜色 */
+}
+
+/* 播放时按钮颜色 */
+.play-button.playing {
+    background-color: #ffd900;
+}
+
+/* 从头播放按钮的特殊样式（小方块） */
+.restart-button {
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    line-height: 1; /* 确保内容居中 */
+    font-size: 1.2em;
+}
+
+.restart-button::after {
+    content: "■"; /* Unicode字符：小方块 */
+    color: var(--text-light);
+    display: block;
+}
+
+/* Yura音乐分享样式 (暂时简单) */
+/* yura 音乐分享板块样式 */
+#Yura-Hatsuki {
+    font-size: 13ex;
+    font-family: 'YuraHatsukiFont', sans-serif;
+    text-align: center;
+    background-image: linear-gradient(to right, #1d1f2792,rgba(84, 71, 158, 0.84), #000000);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-weight: bold; /* 确保文字足够粗，以便渐变效果更明显 */
+}
+
+.yura-section {
+    /* 保持你的 content-section 样式，比如半透明背景 */
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.yura-intro {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto var(--spacing-lg);
+    line-height: 1.8;
+}
+
+.music-recommendations {
+    display: grid;
+    /* 在宽屏上使用两列布局，每列宽度相等 */
+    grid-template-columns: 1fr 1fr;
+    gap: 40px; /* 间距大一些，让每个推荐块更独立 */
+}
+
+.song-item {
+    display: flex; /* 使用 flexbox 布局 */
+    gap: var(--spacing-md);
+    background-color: rgba(0, 0, 0, 0.315); /* 内部小卡片使用更透明的背景 */
+    border-radius: var(--border-radius);
+    padding: var(--spacing-md);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.song-item:hover {
+    transform: translateY(-5px); /* 悬停时向上浮动，增加互动感 */
+}
+
+.song-cover {
+    width: 120px;
+    height: 120px;
+    border-radius: var(--border-radius);
+    object-fit: cover;
+}
+
+.song-details {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 1px solid #ccc; /* 1像素实线边框，颜色为浅灰色 */
+    border-radius: var(--border-radius); /* 保持圆角 */
+    padding: var(--spacing-md); /* 增加内边距，让内容与边框有空间 */
+    
+    /* 如果不想让背景色覆盖边框，或者边框与背景色冲突，可以调整这里 */
+    background-color: rgba(255, 255, 255, 0.7); /* 保持半透明背景 */
+}
+
+.song-title {
+    font-family: 'YuraFont', sans-serif;
+    font-size: 1.4em;
+    margin-bottom: 1px; 
+    color: var(--primary-gray);
+}
+
+.song-artist {
+    font-family: 'YuraFont', sans-serif;
+    font-size: 1.1em;
+    color: var(--secondary-gray);
+    font-style: italic;
+    margin-bottom: 1px;
+}
+
+.my-comment {
+    font-family: 'IntroFont', sans-serif;
+    font-size: 1.0em;
+    line-height: 1.6;
+    color: #444;
+}
+
+.player-container {
+    text-align: center; /* 使用 text-align 来居中 iframe */
+    width: 100%; /* 确保容器占据整个宽度 */
+}
+
+.listen-link {
+    display: inline-block;
+    background-color: var(--accent-green);
+    color: var(--text-light);
+    text-decoration: none;
+    padding: 8px 15px;
+    border-radius: 50px;
+    font-weight: bold;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.listen-link:hover {
+    background-color: #388E3C;
+}
+
+/* 移动端响应式布局 */
+@media (max-width: 768px) {
+    .music-recommendations {
+        /* 在小屏幕上改为单列布局 */
+        grid-template-columns: 1fr;
+    }
+
+    .song-item {
+        /* 移动端图片和文字上下排列 */
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}
+
+/* 底部样式 */
+.main-footer {
+    background-color: var(--primary-gray);
+    color: var(--text-light);
+    text-align: center;
+    padding: var(--spacing-md) 0;
+
+}
+
+.social-links {
+    margin-bottom: var(--spacing-sm);
+}
+
+.social-links a {
+    color: var(--text-light);
+    font-size: 2em; /* 图标大小 */
+    margin: 0 var(--spacing-sm);
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--accent-green);
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+    .nav-links {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+        padding: 0;
+    }
+
+    .main-title {
+        font-size: 4em;
+    }
+
+    .section-title {
+        font-size: 1.8em;
+    }
+
+    .games-grid {
+        grid-template-columns: 1fr; /* 单列布局 */
+    }
+}
